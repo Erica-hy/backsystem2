@@ -1,0 +1,39 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "companyId":1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com"
+    },
+    {
+      "id": 2,
+      "companyId":2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      "id": 3,
+      "companyId":3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "email": "ann@codingthesmartway.com"
+    }
+  ],
+  "companies":[
+      {
+        "id":1,
+        "name":"google"
+      },
+      {
+        "id":2,
+        "name":"apple"
+      },
+      {
+        "id":3,
+        "name":"hauwei"
+      }
+      ]
+}

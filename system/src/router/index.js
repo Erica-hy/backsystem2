@@ -1,7 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 Vue.use(Router)
+
+import {
+  Form,
+  FormItem,
+  Input,
+  Button
+} from 'element-ui'
+
+
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.use(Button)
+
 
 import login from '../components/login'
 

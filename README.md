@@ -99,11 +99,13 @@ http://localhost:3000/companies?_sort=name&_order=asc
 
 运行后可以直接使用了给好的接口
 
-## 搭建脚手架及导航
-1. vue init webpack （项目名）
-2. npm init
-3. 在component文件里创建几个组件
-4. 在router文件的index.js的文件里配置路由
-5. 在app.vue（主组件）里写组件嵌套
-6. 在index.html里引入外部bootstrap.js（百度其cdn）
+## 使用fontcss
+
+在要用fonticon的组件里引入css
+
+```
+prefix-icon="iconfont icon-user"
+```
+
+
 

@@ -5,29 +5,29 @@
         <img src="../assets/logo.png" alt="">
       </div>
       <div class="login-content">
-        <el-form ref="form" :model="form">
-          <el-form-item>
+        <el-form ref="form" :model="form" :rules="rules">
+          <el-form-item prop="name">
             <el-input v-model="form.name" >
                 <i slot="prefix" class="iconfont icon-user"></i>
             </el-input>
           </el-form-item>
-          <el-form-item>
-             <el-input v-model="form.password" type="password">
+          <el-form-item prop="password">
+             <el-input v-model="form.password" type="password" >
                <i slot="prefix" class="iconfont icon-icon2"></i>
              </el-input>
           </el-form-item>
           <div class="btn-box">
-             <el-button type="primary">登录</el-button>
+             <el-button type="primary" @click="submit">登录</el-button>
              <el-button type="info">重置</el-button>
           </div>
        </el-form>
       </div>
-
     </div>
   </div>
 </template>
 
 <script>
+import {login} from '../network/login'
 export default {
   name:"login",
   data() {
@@ -35,8 +35,53 @@ export default {
       form:{
         name:'',
         password:''
+      },
+      loginData:{},
+      rules:{
+        name:[
+          {required:true,message:"请输入名字",trigger:'blur'}
+        ],
+        password:[
+          {required:true,message:"请输入密码",trigger:'blur'}
+        ]
       }
     }
+  },
+  mounted() {
+    login().then(res=>{
+      this.loginData = res.data;
+    })
+  },
+
+  methods: {
+    //登录提交
+    submit(){
+      this.loginData.some((item,index)=>{
+        if(item.name==this.form.name&&item.password==this.form.password){
+          this.$router.push('/home')
+        }
+    //调用防抖函数
+        this.message(2000)
+
+      })
+    },
+    //防抖函数-半成品
+    debounce(delay){
+        let timer =null;
+           timer = setTimeout(() => {
+                  clearTimeout(timer)
+                  this.$message({
+                      showClose: true,
+                      message: '警告哦，这是一条警告消息',
+                      type: 'warning'
+                    })
+                }, delay)
+    },
+    message(delay){
+      this.debounce(delay)
+    },
+
+
   },
 }
 </script>
@@ -92,5 +137,11 @@ export default {
   .el-button{
     padding: 10px 15px;
   }
+}
+
+.alert{
+  width: 30%;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 </style>

@@ -17,7 +17,7 @@
              </el-input>
           </el-form-item>
           <div class="btn-box">
-             <el-button type="primary" @click="submit">登录</el-button>
+             <el-button type="primary" @click="submit()">登录</el-button>
              <el-button type="info">重置</el-button>
           </div>
        </el-form>
@@ -33,8 +33,8 @@ export default {
   data() {
     return {
       form:{
-        name:'',
-        password:''
+        name:'admin',
+        password:'123456'
       },
       loginData:{},
       rules:{
@@ -52,27 +52,31 @@ export default {
       this.loginData = res.data;
     })
   },
-
   methods: {
     //登录提交
     submit(){
-      this.loginData.some((item,index)=>{
-        if(item.name==this.form.name&&item.password==this.form.password){
-          this.$router.push('/home')
-        }
-    //调用防抖函数
-        this.message(2000)
+       if(this.form.name&&this.form.password){
+          var ifTrue = this.loginData.some((item,index)=>{
+                if(item.name==this.form.name&&item.password==this.form.password){
+                  return true;
+                }
+              })
+              if(ifTrue) {
+                this.$router.push('/home');
+              } else {
+                this.message(500)
+              }
+       }
 
-      })
     },
-    //防抖函数-半成品
+    //防抖函数
     debounce(delay){
         let timer =null;
            timer = setTimeout(() => {
                   clearTimeout(timer)
-                  this.$message({
+                  this.$message.warning({
                       showClose: true,
-                      message: '警告哦，这是一条警告消息',
+                      message: '账号或密码错误',
                       type: 'warning'
                     })
                 }, delay)
@@ -85,7 +89,6 @@ export default {
   },
 }
 </script>
-
 <style lang="less" scoped>
 @import url('../assets/font/iconfont.css');
 #login{

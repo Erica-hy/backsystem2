@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { user } from "../network/user.js";
 export default {
   name: "editmember",
@@ -61,11 +62,19 @@ export default {
     return {
       tableData: [],
       dialogVisible: false,
+      //输入的表单数据
       form: {
         id: "",
         FirstName: "",
         LastName:"",
         email:""
+      },
+      //提交到后台的表单数据
+      formList:{
+          id: "",
+          FirstName: "",
+          LastName:"",
+          email:""
       },
       // 表单验证
       dialogRules:{
@@ -106,8 +115,34 @@ export default {
             message:"提交成功",
             type:'success'
           });
-          this.$refs.dialogForm.resetFields()
+          //将输入的表单数据传到后台
+          this.formList.id=this.form.id
+          this.formList.FirstName=this.form.FirstName
+          this.formList.LastName=this.form.LastName
+          this.formList.email=this.form.email
+          //向后台传递数据
+         axios({
+          headers: {
+              'Content-Type': 'application/json'
+          },
+           url:'/user',
+           method:'get',
+           params: {},
+            data:{
+            'id':412,
+            'FirstName':'eihr',
+            'LastName':'iwueh',
+            'email':'6319283@qq.com'
+          },
+           transformRequest: [function(data) {
+            data = JSON.stringify(data)
+            return data
+          }],
 
+         })
+
+         //表单重置
+          this.$refs.dialogForm.resetFields()
         }else{
          this.dialogVisible = true
          this.$message.warning({

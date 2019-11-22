@@ -51,7 +51,6 @@ Vue.use(Table)
 Vue.use(TableColumn)
 
 Vue.prototype.$prompt = MessageBox.prompt;
-Vue.prototype.$msgbox = MessageBox.$msgbox;
 class message {
   success (options, single = true) {
     this[showMessage]('success', options, single)

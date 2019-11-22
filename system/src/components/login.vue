@@ -62,12 +62,11 @@ export default {
                 }
               })
               if(ifTrue) {
-                this.$router.push('/home');
+                this.$router.push('/home/homeChild');
               } else {
                 this.message(500)
               }
        }
-
     },
     //防抖函数
     debounce(delay){

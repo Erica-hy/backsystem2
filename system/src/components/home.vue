@@ -8,35 +8,27 @@
       <!-- 内容 -->
       <el-container>
         <!-- aside -->
-
-        <el-aside width="200px">
-
-          <el-menu @open="handleOpen" @close="handleClose" >
+        <el-aside  width="200px">
+          <el-menu :default-active="this.$router.path" router>
             <!-- 导航-首页 -->
-            <el-menu-item index="1">
-                <template slot="title">
-                  <i class="el-icon-ship"></i>
-                <span>首页</span>
-                </template>
-            </el-menu-item>
+          <el-menu-item index="/home/homeChild">
+            <i class="el-icon-ship"></i>
+            <span slot="title">系统首页</span>
+         </el-menu-item>
                 <!-- 导航-成员管理 -->
-              <el-submenu index="2">
+              <el-submenu index="">
                 <template slot="title">
                   <i class="el-icon-s-help"></i>
-               成员管理
+               <span>成员管理</span>
                 </template>
-                        <el-menu-item index="2-1">成员列表</el-menu-item>
-                        <el-menu-item index="2-2">编辑成员</el-menu-item>
+                        <el-menu-item index="/home/MemberList">成员列表</el-menu-item>
+                        <el-menu-item index="/home/EditMember">编辑成员</el-menu-item>
              </el-submenu>
          </el-menu>
         </el-aside>
         <!-- main -->
         <el-main>
-        <!-- 展开收起 -->
-          <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-              <el-radio-button :label="false">展开</el-radio-button>
-              <el-radio-button :label="true">收起</el-radio-button>
-          </el-radio-group>
+            <router-view></router-view>
         </el-main>
       </el-container>
 </el-container>
@@ -46,28 +38,11 @@
 <script>
 export default {
   name:"home",
-  data() {
-    return {
-      isCollapse: true
-    }
-  },
-  methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
-  },
 
 }
 </script>
 
 <style lang="less" scoped>
- .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
-  }
 #home,#content{
   height: 100%;
     p{

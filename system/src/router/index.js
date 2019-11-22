@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import echats from 'echarts'
+Vue.prototype.$echarts = echats
 Vue.use(Router)
 import 'element-ui/lib/theme-chalk/index.css'
 const showMessage = Symbol('showMessage')
@@ -21,9 +22,16 @@ import {
   Menu,
   Submenu,
   RadioButton,
-  RadioGroup
+  RadioGroup,
+  Table,
+  TableColumn,
+  Row,
+  MessageBox,
+  Dialog
 } from 'element-ui'
 
+Vue.use(Dialog)
+Vue.use(Row)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
@@ -39,6 +47,11 @@ Vue.use(MenuItemGroup)
 Vue.use(Submenu)
 Vue.use(RadioButton)
 Vue.use(RadioGroup)
+Vue.use(Table)
+Vue.use(TableColumn)
+
+Vue.prototype.$prompt = MessageBox.prompt;
+Vue.prototype.$msgbox = MessageBox.$msgbox;
 class message {
   success (options, single = true) {
     this[showMessage]('success', options, single)
@@ -68,6 +81,9 @@ Vue.prototype.$message = new message()
 
 import login from '../components/login'
 import home from '../components/home'
+import MemberList from '../components/MemberList'
+import EditMember from '../components/EditMember'
+import homeChild from '../components/homeChild'
 const routes =[
   {
     path:'/',
@@ -79,8 +95,23 @@ const routes =[
   },
   {
     path:'/home',
-    component:home
-  }
+    component:home,
+    children:[
+      {
+        path:'MemberList',
+        component:MemberList
+      },
+      {
+        path:'EditMember',
+        component:EditMember
+      },
+      {
+        path:'homeChild',
+        component:homeChild
+      }
+    ]
+  },
+
 
 ]
 

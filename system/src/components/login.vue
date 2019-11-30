@@ -33,8 +33,8 @@ export default {
   data() {
     return {
       form:{
-        name:'admin',
-        password:'123456'
+        name:'',
+        password:''
       },
       loginData:{},
       rules:{

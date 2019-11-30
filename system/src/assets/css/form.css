@@ -1,0 +1,29 @@
+.el-form-item{
+  display: flex;
+  justify-content: center;
+}
+
+.el-form-item__label{
+  width: 98px !important;
+  text-align: center;
+  margin-left: 0;
+}
+
+.el-form-item__content{
+  margin-left: 0 !important;
+}
+
+.btn-box{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.el-pagination{
+  margin-top: 20px;
+}
+
+.searchs{
+  display: flex;
+  width: 200px;
+  margin-bottom: 20px;
+}

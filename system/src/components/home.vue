@@ -23,6 +23,7 @@
                 </template>
                         <el-menu-item index="/home/MemberList">成员列表</el-menu-item>
                         <el-menu-item index="/home/EditMember">编辑成员</el-menu-item>
+                        <el-menu-item index="/home/AddMember">新增成员</el-menu-item>
              </el-submenu>
          </el-menu>
         </el-aside>

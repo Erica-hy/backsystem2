@@ -15,8 +15,10 @@
     "element-ui": "^2.12.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
+    "qs": "^6.9.1",
     "style-loader": "^1.0.0",
     "vue": "^2.5.2",
+    "vue-axios": "^2.1.5",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

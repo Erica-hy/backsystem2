@@ -1,61 +1,104 @@
 {
   "user": [
     {
-      "id": 1,
-      "companyId":1,
-      "first_name": "Sebastian",
-      "last_name": "Eschweiler",
-      "email": "sebastian@codingthesmartway.com"
+      "name": "迪丽热巴",
+      "age": 18,
+      "phone": 16423436784,
+      "id": 11
     },
     {
-      "id": 2,
-      "companyId":2,
-      "first_name": "Steve",
-      "last_name": "Palmer",
-      "email": "steve@codingthesmartway.com"
+      "name": "张艺兴",
+      "age": 24,
+      "phone": 12363287392,
+      "id": 12
     },
     {
-      "id": 3,
-      "companyId":3,
-      "first_name": "Ann",
-      "last_name": "Smith",
-      "email": "ann@codingthesmartway.com"
+      "name": "鹿晗",
+      "age": 26,
+      "phone": 17653245123,
+      "id": 13
+    },
+    {
+      "name": "陈坤",
+      "age": 24,
+      "phone": 19821318721,
+      "id": 14
+    },
+    {
+      "name": "陈小春",
+      "age": 32,
+      "phone": 19932412314,
+      "id": 15
+    },
+    {
+      "name": "张韶涵",
+      "age": 32,
+      "phone": 18723674356,
+      "id": 16
+    },
+    {
+      "name": "邓紫棋",
+      "age": 28,
+      "phone": 17987678324,
+      "id": 17
+    },
+    {
+      "name": "周杰伦",
+      "age": 34,
+      "phone": 18976843562,
+      "id": 18
+    },
+    {
+      "name": "王一博",
+      "age": 20,
+      "phone": 17634583242,
+      "id": 19
+    },
+    {
+      "name": "张杰",
+      "age": 33,
+      "phone": 17643528794,
+      "id": 20
+    },
+    {
+      "name": "蔡徐坤",
+      "age": 20,
+      "phone": 17654673456,
+      "id": 21
+    },
+    {
+      "name": "陈小春",
+      "age": 32,
+      "phone": 13276432561,
+      "id": 22
     }
   ],
-  "companies":[
-      {
-        "id":1,
-        "name":"google"
-      },
-      {
-        "id":2,
-        "name":"apple"
-      },
-      {
-        "id":3,
-        "name":"hauwei"
-      }
-  ],
-  "login":[
+  "login": [
     {
-      "name":"admin",
-      "password":"123456"
+      "name": "admin",
+      "password": "123456"
     },
     {
-      "name":"admin2",
-      "password":"234567"
+      "name": "admin2",
+      "password": "234567"
     },
     {
-      "name":"admin3",
-      "password":"345678"
+      "name": "admin3",
+      "password": "345678"
     },
     {
-      "name":"admin4",
-      "password":"345678"
+      "name": "admin4",
+      "password": "345678"
     },
     {
-      "name":"admin5",
-      "password":"345678"
+      "name": "admin5",
+      "password": "345678"
+    },
+    {
+      "name": "迪丽热巴",
+      "id": 8,
+      "email": "63912319@qq.com",
+      "companyId": "乐华娱乐"
     }
   ]
 }

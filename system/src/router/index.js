@@ -27,7 +27,8 @@ import {
   TableColumn,
   Row,
   MessageBox,
-  Dialog
+  Dialog,
+  Pagination
 } from 'element-ui'
 
 Vue.use(Dialog)
@@ -49,8 +50,7 @@ Vue.use(RadioButton)
 Vue.use(RadioGroup)
 Vue.use(Table)
 Vue.use(TableColumn)
-
-Vue.prototype.$prompt = MessageBox.prompt;
+Vue.use(Pagination)
 class message {
   success (options, single = true) {
     this[showMessage]('success', options, single)
@@ -77,12 +77,14 @@ class message {
   }
 }
 Vue.prototype.$message = new message()
-
+Vue.prototype.$Message = Message
+Vue.prototype.$confirm = MessageBox.confirm
 import login from '../components/login'
 import home from '../components/home'
 import MemberList from '../components/MemberList'
 import EditMember from '../components/EditMember'
 import homeChild from '../components/homeChild'
+import AddMember from '../components/AddMember'
 const routes =[
   {
     path:'/',
@@ -107,6 +109,10 @@ const routes =[
       {
         path:'homeChild',
         component:homeChild
+      },
+      {
+        path:'AddMember',
+        component:AddMember
       }
     ]
   },

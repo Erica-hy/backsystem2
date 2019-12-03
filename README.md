@@ -1,3 +1,8 @@
+## 项目运行
+1. cd jsonserver文件执行npm run testserver 开启接口
+2. cd system 文件执行npm run dev 运行项目
+
+
 ## 配置json server
 
 百度Jsonserver 在github上找到步骤
